@@ -1,23 +1,24 @@
 # A Web-Based Flexible Image Compressor
 
-### This is the final project from the University of Leeds.
+This is the final project from the University of Leeds.
 
-### The repository includes 2 folders: web, compressai
+The repository includes 2 folders: web, compressai
 
-### web
-### This folder includes all the files for running the whole website.
-### The website provides 5 methods to reduce image size:
-### * traditional image compression (through browser-image-compression.js)
-### * image-to-svg (through imagetracer.js)
-### * k-menas
-### * end-to-end model
-### * cropping
+## web
+This folder includes all the files for running the whole website.
+The website provides 5 methods to reduce image size:
+* traditional image compression (through browser-image-compression.js)
+* image-to-svg (through imagetracer.js)
+* k-menas
+* end-to-end model
+* cropping
 
-### compressai
-### This folder is a modification based on compressai. Main changes includes:
-### * add a new model - bmshj2018-hardswish
-### * two files which are used to export the pretrained and trained model to ONNX format
-### * two saved checkpoint of the model
+## compressai
+This folder is a modification based on CompressAI.
+Main changes includes:
+* add a new model - bmshj2018-hardswish
+* two files which are used to export the pretrained and trained model to ONNX format
+* two saved checkpoint of the model
 
 ## Installation
 
