@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Login Example</title>
+
+  <!-- Google Sign-In SDK -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+  <!-- Meta Tag for Google Client ID -->
+  <meta name="google-signin-client_id" content="493186144586-qqqgvqhig2lroe2rghv4vggs1f61kgnq.apps.googleusercontent.com">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .g-signin2 {
+      margin-top: 20px;
+    }
+    #user-info {
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Google Login Demo</h1>
+  <p>Click below to sign in with your Google account</p>
+
+  <!-- Google Sign-In Button -->
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+  <!-- Display User Information -->
+  <div id="user-info">
+    <h2>Welcome, <span id="user-name"></span></h2>
+    <img id="user-image" src="" alt="User Image" width="100">
+    <p id="user-email"></p>
+    <button onclick="signOut();">Sign out</button>
+  </div>
+
+  <script>
+    // This function is called when the user logs in successfully with Google
+    function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+      var userName = profile.getName();
+      var userEmail = profile.getEmail();
+      var userImage = profile.getImageUrl();
+
+      // Display user info
+      document.getElementById('user-name').textContent = userName;
+      document.getElementById('user-email').textContent = userEmail;
+      document.getElementById('user-image').src = userImage;
+      document.getElementById('user-info').style.display = 'block';
+
+      // Optionally, save user info to localStorage
+      localStorage.setItem('user', JSON.stringify({
+        name: userName,
+        email: userEmail,
+        imageUrl: userImage
+      }));
+    }
+
+    // This function is called when the user clicks on the sign-out button
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+        document.getElementById('user-info').style.display = 'none';
+
+        // Clear user info from localStorage
+        localStorage.removeItem('user');
+      });
+    }
+  </script>
+
+</body>
+</html>

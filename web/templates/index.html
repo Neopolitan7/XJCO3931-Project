@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片压缩器</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>图片压缩器</h2>
+            <button id="authorize-button">登录</button>
+            <img id="user-image" src="#" alt="user-image">
+        </div>
+        <div class="compressor">
+            <div class="sidebar">
+                <a href="#" class="type1 active" data-type="1" data-src="./basic.html">
+                    <span>基础压缩</span>
+                </a>
+                <a href="#" class="type2" data-type="2" data-src="./svg.html">
+                    <span>位图转矢量图</span>
+                </a>
+                <a href="#" class="type3" data-type="3" data-src="./k-means.html">
+                    <span>K-Means</span>
+                </a>
+                <a href="#" class="type4" data-type="4" data-src="./endtoend.html">
+                    <span>端到端模型</span>
+                </a>
+                <a href="#" class="type5" data-type="5" data-src="./crop.html">
+                    <span>图片裁剪</span>
+                </a>                   
+            </div>
+            <div class="upload-view">
+                <iframe src="./basic.html" class="iframeContainer" scrolling="no"></iframe>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footerList">
+                <div class="footerItem">
+                    <div class="footerTitle">
+                        <div>
+                            <img src="../static/image/footer_icon1.jpeg" alt="footer_icon">
+                            <span class="font-bold">智能压缩</span>
+                        </div>
+                    </div>
+                    <div class="footerContent">
+                        <span>支持多种常用的压缩算法，还可运用AI压缩提高图片质量</span>
+                    </div>
+                </div>
+                <div class="footerItem">
+                    <div class="footerTitle">
+                        <div>
+                            <img src="../static/image/footer_icon2.jpeg" alt="footer_icon">
+                            <span class="font-bold">支持批量文件</span>
+                        </div>
+                    </div>
+                    <div class="footerContent">
+                        <span>允许用户同时上传10个文件批量处理，提高使用效率</span>
+                    </div>
+                </div>
+                <div class="footerItem">
+                    <div class="footerTitle">
+                        <div>
+                            <img src="../static/image/footer_icon3.jpeg" alt="footer_icon">
+                            <span class="font-bold">文件安全保障</span>
+                        </div>
+                    </div>
+                    <div class="footerContent">
+                        <span>文件无需上传服务器，确保无人能访问，保障用户隐私安全</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js"></script>
+    <script src="../static/js/index.js"></script>
+</body>
+</html>

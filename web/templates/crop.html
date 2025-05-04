@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CROP</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/iframe.css">
+</head>
+<body>
+    <div class="iframe">
+        <div class="uploaderContainer">
+            <div class="inform">
+                <img src="../static/image/upload_add.3c4e454c.svg" alt="">
+                <p>点击 或 拖拽上传文件</p>
+            </div>
+            <div class="details">
+                <p>支持PNG、JPG、JPEG、WEBP图片裁剪</p>
+            </div>
+        </div>
+        <div class="viewerContainer">
+            <div class="viewerBar">
+                <div class="fileName">图片裁剪</div>
+                <div class="btnGroups">
+                    <button class="btn" id="cleanAll">重新上传</button>
+                    <button class="btn" id="googleDrive">上传网盘</button>
+                    <button class="btn download" id="downloadAll">
+                        <img src="../static/image/download.svg" alt="download-icon">
+                        全部下载
+                    </button>
+                </div>
+            </div>
+            <div class="viewerItems cropContainer">
+                <img id="uploaded-image" src="../static/image/test.jpeg" alt="No image uploaded">
+                <div id="crop-area" class="crop-area">
+                    <div class="resize-handle tl"></div>
+                    <div class="resize-handle tr"></div>
+                    <div class="resize-handle bl"></div>
+                    <div class="resize-handle br"></div>
+                </div>
+            </div>
+            <div class="settingContainer">
+                <div class="basic">
+                    <div class="buttonContainer cropButtonContainer">
+                        <button class="startCompress startCrop" id="startCompress">裁剪图片</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/crop.js"></script>
+</body>
+</html>

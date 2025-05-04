@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASIC</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/iframe.css">
+</head>
+<body>
+    <div class="iframe">
+        <div class="uploaderContainer">
+            <div class="inform">
+                <img src="../static/image/upload_add.3c4e454c.svg" alt="">
+                <p>点击 或 拖拽上传文件</p>
+            </div>
+            <div class="details">
+                <p>支持PNG、JPG、JPEG、WEBP压缩，一次可以处理10张</p>
+            </div>
+        </div>
+        <div class="viewerContainer">
+            <div class="viewerBar">
+                <div class="fileName">文件名称</div>
+                <div class="btnGroups">
+                    <button class="btn" id="cleanAll">重新上传</button>
+                    <div class="fileUploader">
+                        <button class="btn" id="upload">添加图片</button>
+                    </div>
+                    <button class="btn" id="googleDrive">上传网盘</button>
+                    <button class="btn download" id="downloadAll">
+                        <img src="../static/image/download.svg" alt="download-icon">
+                        全部下载
+                    </button>
+                </div>
+            </div>
+            <div class="viewerItems">
+            </div>
+            <div class="settingContainer">
+                <div class="basic">
+                    <div class="settingTitle">压缩设置：</div>
+                    <div class="options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="compressMode" value="maxSize" checked> 限定大小
+                        </label>
+                        <div class="slider-container">
+                            <input type="range" class="maxSize" id="maxSize" min="200" max="2000" step="10" value="1000">
+                            <input type="number" id="sizeInput" value="1000" min="200" max="2000">KB
+                        </div>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="compressMode" value="maxWidthOrHeight"> 最大长宽
+                        </label>
+                        <div class="slider-container">
+                            <input type="number" id="maxWidthorHeight" value="0"> px
+                        </div>
+                        <div class="slider-container">
+                            <label for="outputFormat" class="format">格式</label>
+                            <button class="select-btn" id="outputFormatBtn">PNG</button>
+                            <div class="select-dropup" id="outputFormatDropdown">
+                                <div class="select-option" data-value="image/png">PNG</div>
+                                <div class="select-option" data-value="image/jpeg">JPEG</div>
+                                <div class="select-option" data-value="image/webp">WebP</div>
+                            </div>
+                            <!-- 隐藏的原始select元素，用于表单提交 -->
+                            <select id="outputFormat" name="outputFormat" style="display: none;">
+                                <option value="image/png" selected>PNG</option>
+                                <option value="image/jpeg">JPEG</option>
+                                <option value="image/webp">WebP</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="buttonContainer">
+                        <button class="startCompress" id="startCompress">开始压缩</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="compareModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>图片对比</h3>
+            <div class="image-comparison">
+                <div class="image-container">
+                    <h4>原图</h4>
+                    <img id="originalImage" src="" alt="原图">
+                    <div class="image-size" id="originalSize"></div>
+                </div>
+                <div class="image-container">
+                    <h4>压缩后</h4>
+                    <img id="compressedImage" src="" alt="压缩后">
+                    <div class="image-size" id="compressedSize"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/browser-image-compression.js"></script>
+    <script src="../static/js/basic.js"></script>
+</body>
+</html>
